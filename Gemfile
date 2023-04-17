@@ -76,3 +76,7 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 
 #Authentication
 gem 'devise'
+
+#Bootstrap
+gem 'bootstrap-sass', '~> 3.4.1'
+#gem 'sassc-rails', '>= 2.1.0'
