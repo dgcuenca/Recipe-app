@@ -5,6 +5,7 @@
 
 body {
   color: #131212;
+  background: #f9f9f7;
 }
 
 .notice-wrapper {
@@ -21,7 +22,7 @@ body {
   text-decoration: none;
   border-radius: 4px;
   color: #fff;
-  background: #69f;
+  background: rgb(62, 111, 209);
   cursor: pointer;
 }
 
@@ -54,11 +55,16 @@ a:hover {
   border-collapse: collapse;
   color: #000;
   background-color: #ffffffd7;
+  margin-top: 1rem;
+}
+
+.general-list-header h3 {
+  color: rgb(12, 51, 136);
 }
 
 article {
   color: #000;
-  background-color: #ffffffd7;
+  background-color: #c4bebed7;
 }
 
 .table th,
@@ -69,5 +75,22 @@ article {
 }
 
 .table th {
-  background-color: #6699ffab;
+  background-color: #dcdee2ab;
+}
+
+.general_shopping_list {
+  background: #fff;
+  margin: 3rem auto;
+  max-width: 50rem;
+  padding: 1rem;
+  gap: 2rem;
+}
+
+.general_shopping_list h1 {
+  align-self: center;
+}
+
+.general_shopping_list div {
+  display: flex;
+  justify-content: space-between;
 }
