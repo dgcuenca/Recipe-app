@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   def index
-    # index
+    @recipes = current_user.recipes
   end
 
   def show

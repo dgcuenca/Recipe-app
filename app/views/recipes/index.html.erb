@@ -1,1 +1,12 @@
-  <h2>Recipes</h2>
+<section class='foods-wrapper flex-items'>
+  <h1>Recipes</h1>
+  <div class="add-recipe flex-items"><%= link_to "Add recipe", new_recipe_path, class:"button"%>
+  <% if @recipes.count > 0%>
+    <% @recipes.each do |recipe| %>
+      <%= render recipe%>
+    <% end %>
+  <%else%>
+      <h2>No recipes</h2>
+  <%end%>
+  </div>
+</section>
