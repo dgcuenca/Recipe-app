@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  before_action :set_recipe, only: %i[show destroy]
   def index
     @recipes = current_user.recipes
   end
@@ -23,10 +24,19 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    # destroy
+    if @recipe.destroy
+      flash[:success] = 'Deleted successfully.'
+    else
+      flash[:error] = 'Food is not deleted.'
+    end
+    redirect_to request.referrer
   end
 
   private
+
+  def set_recipe
+    @recipe = Recipe.find(params[:id])
+  end
 
   def recipe_params
     params.require(:recipe).permit(:user_id, :name, :preparation_time, :cooking_time, :description)
