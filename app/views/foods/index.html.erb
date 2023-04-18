@@ -1,3 +1,24 @@
-<div>
-<h1>Food List</h1>
-</div>
+<section class='foods-wrapper flex-items'>
+  <h1>Foods</h1>
+  <div class="add-food flex-items"><%= link_to "Add food", new_food_path, class:"button"%>
+  <% if @foods.count > 0%>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Measurment Unit</th>
+          <th>Unit Price</th>
+          <th>Quantity</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @foods.each do |food| %>
+          <%= render food%>
+        <% end %>
+      </tbody>
+    <%else%>
+      <h2>No foods</h2>
+  <%end%>
+  </div>
+</section>
