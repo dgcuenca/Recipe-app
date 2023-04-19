@@ -4,19 +4,10 @@
     <div class = "recipe-header">
         <p>Preparation Time: <strong><%= @recipe.preparation_time %></strong></p>
         <%= form_with(model: @recipe, url: recipe_path(id: @recipe.id), method: :patch, id: 'recipe-form') do |form| %>
-            <%= form.check_box :public, {class: 'toggle-switch', id: 'public-toggle'}%>
+            <%= form.check_box :public, {class: 'toggle-switch', id: 'public-toggle', onchange: 'submit()'}%>
             <%= form.label :public, class: 'toggle-switch-label', for: 'public-toggle' %>
             <%= form.submit 'Update Recipe', id: 'submit-button', style: 'display: none;' %>
         <% end %>
-
-        <script>
-        const publicform = document.getElementById('recipe-form');
-        const toggle = document.getElementById('public-toggle');
-
-        toggle.addEventListener('change', () => {
-            publicform.submit();
-        });
-        </script>
     </div>
     <p>Cooking Time: <strong><%= @recipe.cooking_time %></strong></p>
   </div>
