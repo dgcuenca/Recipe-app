@@ -5,7 +5,8 @@ class RecipesController < ApplicationController
   end
 
   def show
-    # show
+    @recipe = Recipe.find(request.params['id'])
+    @recipe_id = @recipe.id
   end
 
   def new
@@ -27,9 +28,18 @@ class RecipesController < ApplicationController
     if @recipe.destroy
       flash[:success] = 'Deleted successfully.'
     else
-      flash[:error] = 'Food is not deleted.'
+      flash[:error] = 'Recipe is not deleted.'
     end
     redirect_to request.referrer
+  end
+
+  def update
+    @recipe = Recipe.find(params[:id])
+    if @recipe.update(recipe_public_params)
+      redirect_to recipe_path(@recipe)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
@@ -40,5 +50,9 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(:user_id, :name, :preparation_time, :cooking_time, :description)
+  end
+
+  def recipe_public_params
+    params.require(:recipe).permit(:public)
   end
 end
