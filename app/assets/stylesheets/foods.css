@@ -132,3 +132,10 @@
 .toggle-switch:checked + .toggle-switch-label:before {
   transform: translateX(26px);
 }
+
+.recipe-item {
+  margin: 3rem auto;
+  padding: 2rem;
+  border: 1px solid #000;
+  border-radius: 0.5rem;
+}
