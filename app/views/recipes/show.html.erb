@@ -1,7 +1,7 @@
 <section class = "food-item flex-items">
   <div class="food-description flex-items">
     <h2> <%= @recipe.name %></h2>
-    <div class = "recipe-header">
+    <div class = "recipe-headere">
         <p>Preparation Time: <strong><%= @recipe.preparation_time %></strong></p>
         <%= form_with(model: @recipe, url: recipe_path(id: @recipe.id), method: :patch, id: 'recipe-form') do |form| %>
             <%= form.check_box :public, {class: 'toggle-switch', id: 'public-toggle', onchange: 'submit()'}%>

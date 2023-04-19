@@ -87,7 +87,7 @@
   padding: 5px;
 }
 
-.recipe-header {
+.recipe-headere {
   display: flex;
   flex-direction: row;
 }
@@ -113,7 +113,7 @@
   margin-right: 30px;
 }
 
-.toggle-switch-label:before {
+.toggle-switch-label::before {
   content: "";
   position: absolute;
   width: 20px;
@@ -126,10 +126,10 @@
 }
 
 .toggle-switch:checked + .toggle-switch-label {
-  background-color: #4CAF50;
+  background-color: #4caf50;
 }
 
-.toggle-switch:checked + .toggle-switch-label:before {
+.toggle-switch:checked + .toggle-switch-label::before {
   transform: translateX(26px);
 }
 
