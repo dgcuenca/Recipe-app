@@ -1,1 +1,7 @@
- <h2>Show Recipe</h2>
+<section class = "food-item flex-items">
+  <div class="food-description flex-items">
+    <h2> <%= @recipe.name %></h2>
+    <p>Preparation Time: <strong><%= @recipe.preparation_time %></strong></p>
+    <p>Cooking Time: <strong><%= @recipe.cooking_time %></strong></p>
+  </div>
+</section>

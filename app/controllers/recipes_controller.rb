@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
   end
 
   def show
-    # show
+    @recipe = Recipe.find(request.params['id'])
   end
 
   def new
@@ -27,7 +27,7 @@ class RecipesController < ApplicationController
     if @recipe.destroy
       flash[:success] = 'Deleted successfully.'
     else
-      flash[:error] = 'Food is not deleted.'
+      flash[:error] = 'Recipe is not deleted.'
     end
     redirect_to request.referrer
   end
