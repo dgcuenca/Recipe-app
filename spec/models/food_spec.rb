@@ -2,11 +2,11 @@ require 'rails_helper'
 
 RSpec.describe Food, type: :model do
   subject do
-    User.create(name: 'belay', email: '2belamit@gmail.com', password: '123456')
+    User.create(name: 'Belay', email: '2belamit@gmail.com', password: '123456')
   end
 
   before(:each) do
-    @food = Food.new(name: 'Pitzza', measurement_unit: 'kilogram', price: 12, quantity: 2, user_id: subject.id)
+    @food = Food.new(name: 'Pizza', measurement_unit: 'kilogram', price: 12, quantity: 2, user_id: subject.id)
   end
 
   context 'Testing validations' do
@@ -57,7 +57,7 @@ RSpec.describe Food, type: :model do
       expect(@food.macro).to eq(:belongs_to)
     end
 
-    it 'Should have many recipe items' do
+    it 'Should have many recipe' do
       @food = Food.reflect_on_association(:recipe_foods)
       expect(@food.macro).to eq(:has_many)
     end
