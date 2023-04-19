@@ -1,11 +1,12 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, only: %i[show destroy]
+  # before_action :set_recipe, only: %i[show destroy]
   def index
-    @recipes = current_user.recipes
+    @recipes = Recipe.includes(:user).where(user_id: current_user.id)
   end
 
   def show
-    # show
+    @foods = Food.all
+    @recipe = Recipe.find(params[:id])
   end
 
   def new
@@ -14,31 +15,32 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
-    @recipe.user = current_user
+    @recipe.user_id = current_user.id
 
     if @recipe.save
-      redirect_to recipe_path(@recipe), notice: 'Recipe was successfully created.'
+      redirect_to recipes_path, notice: 'Recipe was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
+    @recipe = Recipe.find(params[:id])
     if @recipe.destroy
       flash[:success] = 'Deleted successfully.'
+      redirect_to recipes_path
     else
-      flash[:error] = 'Food is not deleted.'
+      render 'new'
     end
-    redirect_to request.referrer
   end
 
   private
 
-  def set_recipe
-    @recipe = Recipe.find(params[:id])
-  end
+  # def set_recipe
+  #   @recipe = Recipe.find(params[:id])
+  # end
 
   def recipe_params
-    params.require(:recipe).permit(:user_id, :name, :preparation_time, :cooking_time, :description)
+    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
   end
 end
