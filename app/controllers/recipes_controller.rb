@@ -32,6 +32,15 @@ class RecipesController < ApplicationController
     redirect_to request.referrer
   end
 
+  def update
+    @recipe = Recipe.find(params[:id])
+    if @recipe.update(recipe_public_params)
+      redirect_to recipe_path(@recipe)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def set_recipe
@@ -40,5 +49,9 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(:user_id, :name, :preparation_time, :cooking_time, :description)
+  end
+
+  def recipe_public_params
+    params.require(:recipe).permit(:public)
   end
 end
