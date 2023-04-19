@@ -65,3 +65,24 @@
 .recipe_new .field_select > * {
   height: 2.5rem;
 }
+
+.recipe-container {
+  display: flex;
+  border: 1px solid #6699ffab;
+  padding: 10px;
+}
+
+.recipe-header {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  text-align: center;
+  padding: 8px;
+}
+
+.recipe-description {
+  flex-grow: 1;
+  background-color: #6699ffab;
+  text-align: center;
+  padding: 5px;
+}
