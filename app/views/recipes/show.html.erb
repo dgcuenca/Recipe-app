@@ -1,1 +1,16 @@
- <h2>Show Recipe</h2>
+<section class = "food-item flex-items">
+  <div class="food-description flex-items">
+    <h2> <%= @recipe.name %></h2>
+    <div class = "recipe-headere">
+        <p>Preparation Time: <strong><%= @recipe.preparation_time %></strong></p>
+        <%= form_with(model: @recipe, url: recipe_path(id: @recipe.id), method: :patch, id: 'recipe-form') do |form| %>
+            <%= form.check_box :public, {class: 'toggle-switch', id: 'public-toggle', onchange: 'submit()'}%>
+            <%= form.label :public, class: 'toggle-switch-label', for: 'public-toggle' %>
+            <%= form.submit 'Update Recipe', id: 'submit-button', style: 'display: none;' %>
+        <% end %>
+    </div>
+    <div>
+        <p>Cooking Time: <strong><%= @recipe.cooking_time %></strong></p>
+    </div>
+  </div>
+</section>
