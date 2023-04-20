@@ -4,7 +4,7 @@
     <div class = "recipe-detail-header">
         <p>Preparation Time: <strong><%= @recipe.preparation_time %></strong></p>
         <%= form_with(model: @recipe, url: recipe_path(id: @recipe.id), method: :patch, id: 'recipe-form') do |form| %>
-            <%= form.check_box :public, {class: 'toggle-switch', id: 'public-toggle', onchange: 'submit()'}%>
+            <%= form.check_box :public, {class: 'toggle-switch', id: 'public-toggle', onchange: 'submit()', disabled: true}%>
             <%= form.label :public, class: 'toggle-switch-label', for: 'public-toggle' %>
             <%= form.submit 'Update Recipe', id: 'submit-button', style: 'display: none;' %>
         <% end %>
