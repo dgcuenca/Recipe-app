@@ -1,15 +1,6 @@
 <section class = "recipe-item">
   <div class="recipe__container">
     <h2> <%= @recipe.name %></h2>
-<<<<<<< HEAD
-    <div class = "recipe-detail-header">
-        <p>Preparation Time: <strong><%= @recipe.preparation_time %></strong></p>
-        <%= form_with(model: @recipe, url: recipe_path(id: @recipe.id), method: :patch, id: 'recipe-form') do |form| %>
-            <%= form.check_box :public, {class: 'toggle-switch', id: 'public-toggle', onchange: 'submit()', disabled: true}%>
-            <%= form.label :public, class: 'toggle-switch-label', for: 'public-toggle' %>
-            <%= form.submit 'Update Recipe', id: 'submit-button', style: 'display: none;' %>
-        <% end %>
-=======
     <div class='recipe_information'>
       <p>Preparation time: <%=@recipe.preparation_time%> minutes</p>
       <div class='public_logo'>
@@ -19,7 +10,6 @@
         </div>
       </div>
       <p>Cooking time: <%=@recipe.cooking_time%> minutes</p>
->>>>>>> dev
     </div>
     <p><%=@recipe.description%></p>
     <div class='recipe_buttons'>
