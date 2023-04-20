@@ -1,13 +1,14 @@
-<div class = "recipe-container">
-  <div class = "recipe-header">
-    <h3>
-    <%= link_to recipe.name, recipe_path(recipe)%>
-    </h3>
-        <%= link_to "Remove", recipe_path(recipe), class: "delete",
-                data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}
-                %>
-  </div>
-  <p class = "recipe-description">
-      <%= recipe.description %>
-  </p>
-</div>
+  <%@recipes.each_with_index do |recipe, i|%>
+    <article class="recipe_card">
+      <div>
+        <%=link_to recipe_path(id: recipe.id) do%>
+          <h2><%=recipe.name%></h2>
+        <%end%>
+        <%# Authentication %>
+          <%= link_to 'REMOVE', recipe_path(recipe), class: "delete",data: {
+            turbo_method: :delete, turbo_confirm: "Are you sure?"
+          } %>
+      </div>
+      <p>Recipe Description:<br><%=recipe.description%></p>
+    </article>
+  <%end%>

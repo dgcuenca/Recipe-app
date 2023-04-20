@@ -2,23 +2,19 @@
 <%= form_with(model: @recipe, html: { class: "flex-items" }) do |form| %>
 <%= render "shared/form_error_message", resource: @recipe %>
   <div class="field">
-    <%= form.label "Recipe name", style: "display: block" %>
-    <%= form.text_field :name, required: true, class: "form-input" %>
+    <%= form.text_field :name, required: true, class: "form-input" , placeholder: "Recipe name" %>
   </div>
 
   <div class="field">
-    <%= form.label "Preparation time", style: "display: block" %>
-    <%= form.text_field :preparation_time, required: true, class: "form-input" %>
+    <%= form.text_field :preparation_time, required: true, class: "form-input", placeholder: "Preparation time" %>
   </div>
 
   <div class="field">
-    <%= form.label "Cook time", style: "display: block" %>
-    <%= form.text_field :cooking_time, required: true, class: "form-input" %>
+    <%= form.text_field :cooking_time, required: true, class: "form-input", placeholder: "Cooking time" %>
   </div>
 
   <div class="field">
-    <%= form.label "Description", style: "display: block" %>
-    <%= form.text_field :description, required: true, class: "form-input" %>
+    <%= form.text_field :description, required: true, class: "form-input", placeholder:"Description" %>
   </div>
 
   <%= form.submit "Create recipe", class: "button"%>
