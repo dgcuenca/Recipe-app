@@ -52,6 +52,29 @@
   text-align: center;
 }
 
+.update__ingredient-container {
+  width: 30%;
+  background: #fff;
+  border: 1px solid rgb(231, 227, 227);
+  border-radius: 0.5rem;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+}
+
+.update__ingredient-container h2 {
+  text-align: center;
+}
+
+.update__ingredient-container p {
+  align-self: flex-start;
+  font-size: 1.2rem;
+}
+
+.modify__ingredient-btn {
+  align-self: flex-start;
+  margin-top: 0.25rem;
+}
+
 .recipe__description-container {
   width: 60%;
   background: #fff;
