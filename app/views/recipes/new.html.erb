@@ -1,5 +1,25 @@
-<section class = "recipe_new flex-items">
-  <h1>New recipe</h1>
-  <%= render "form", food: @food %>
-  <br>
+<section class='recipe_new flex-items'>
+  <h2>New Recipe</h2>
+  <div class="recipe__container">
+    <%= form_with model:Recipe, class: 'flex-items' do |f| %>
+      <%= render "shared/form_error_message", resource: @recipe %>
+      <div class="field">
+        <%= f.text_field :name, placeholder: 'Recipe Name', value: '', required: true%><br>
+      </div>
+      <div class="field">
+        <%= f.number_field :preparation_time, placeholder: 'Preparation Time', required: true%><br>
+      </div>
+      <div class="field">
+        <%= f.number_field :cooking_time, placeholder: 'Cooking Time', required: true%><br>
+      </div>
+      <div class="field">
+        <%= f.text_area :description, placeholder: 'Description', required: true%><br>
+      </div>
+      <div class="field-check publicity__check">
+        <%= f.label :public%>
+        <%= f.check_box :public, {}, true, false%><br>
+      </div>
+      <%= f.submit "Create Recipe", class: "button"%>
+    <%end%>
+  </div>
 </section>
