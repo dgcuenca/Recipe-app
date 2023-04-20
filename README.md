@@ -52,6 +52,28 @@
   </ul>
 </details>
 
+### Learning Objectives
+>- Use Ruby gems as a software packages system.
+>- Install Ruby on Rails framework.
+>- Understand Rails RESTful design and router.
+>- Use controllers to handle requests and render empty views.
+>- Understand Rails naming conventions.
+>- Use params from browser requests in a safe way.
+>- Use preprocessed HTML file with embedded Ruby code.
+>- Use layouts and templates for shared content.
+>- Use database migration files to maintain database schema.
+>- Use validations for models.
+>- Secure app from n+1 problems.
+>- Understand what ORM is.
+>- Write SQL queries with ActiveRecord.
+>- Set up associations between models.
+>- Build a web app that requires the user to log in.
+>- Describe the difference between authorization and authentication.
+>- Use Devise gem for authentication.
+>- Understand how sessions and cookies can support authentication.
+>- Limit access to web app resources based on authorization rules.
+>- Write unit tests using Rspec
+>- Write integration tests with capybara gem
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
@@ -111,7 +133,8 @@ rails s
 To run tests, run the following command:
 
 ```sh
-rspec spec
+rspec ./spec/models/ // to test models
+rspec .spec/views/  // integration test
 ```
 
 ### Deployment

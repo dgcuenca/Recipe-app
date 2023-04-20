@@ -4,10 +4,11 @@
         <%=link_to recipe_path(id: recipe.id) do%>
           <h2><%=recipe.name%></h2>
         <%end%>
-        <%# Authentication %>
+        <%if can? :destroy, recipe%>
           <%= link_to 'REMOVE', recipe_path(recipe), class: "delete",data: {
             turbo_method: :delete, turbo_confirm: "Are you sure?"
           } %>
+          <% end %>
       </div>
       <p>Recipe Description:<br><%=recipe.description%></p>
     </article>

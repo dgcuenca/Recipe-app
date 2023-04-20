@@ -54,3 +54,5 @@ group :test do
 end
 # gem "devise"
 gem 'devise'
+# cancancan
+gem 'cancancan'
