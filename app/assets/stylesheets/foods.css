@@ -1,5 +1,5 @@
 .foods-wrapper {
-  margin: 3rem auto;
+  margin: 4rem auto;
   max-width: 50rem;
   gap: 2rem;
   background: #fff;
@@ -116,11 +116,11 @@
 }
 
 .recipe-item {
-  margin: 3rem auto;
-  max-width: 50%;
-  padding: 3rem;
-  border: 1px solid #000;
-  border-radius: 0.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
 }
 
 .new__ingredients {
@@ -136,30 +136,8 @@
   margin-top: 0.5rem;
 }
 
-.recipe-container2 {
-  padding: 1rem;
-  gap: 1rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.recipe-container2 h2 {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
 .recipe-detail-header {
+  padding: 0.5rem 0;
   display: flex;
   justify-content: space-between;
-}
-
-.recipe-detail-buttons {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: solid 1px black;
-  padding-bottom: 1rem;
-}
-
-.recipe-detail-buttons button {
-  padding: 0.5rem 1rem;
 }
