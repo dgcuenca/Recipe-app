@@ -32,45 +32,26 @@
   border-radius: 0.5rem;
 }
 
+.new__food-container {
+  background: #fff;
+  margin-top: 2rem;
+  width: 40%;
+  padding: 1rem;
+  border: 1px solid rgb(230, 224, 224);
+  border-radius: 0.5rem;
+}
+
+.new__food-container h1 {
+  text-align: center;
+  color:rgb(62, 111, 209);
+  text-transform: capitalize;
+}
+
+.create__food-btn {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
 /* recipe */
-.recipe_new {
-  align-items: center;
-  height: 100vh;
-  margin: 3rem 0;
-  gap: 1rem;
-}
-
-.recipe_new h2 {
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.recipe_new form {
-  align-items: center;
-  gap: 0.5rem;
-  width: 100%;
-}
-
-.recipe_new .field {
-  width: 50%;
-  max-width: 30rem;
-}
-
-.recipe_new .field > * {
-  width: 100%;
-  height: 2rem;
-  padding: 0.5rem;
-}
-
-.recipe_new .field_select > * {
-  height: 2.5rem;
-}
-
-.recipe-container {
-  display: flex;
-  border: 1px solid #6699ffab;
-  padding: 10px;
-}
 
 .recipe-header {
   display: flex;
@@ -138,4 +119,17 @@
   padding: 2rem;
   border: 1px solid #000;
   border-radius: 0.5rem;
+}
+
+.new__ingredients {
+  width: 40%;
+  background: #fff;
+  padding: 2rem;
+  border: 0.2px solid lightgray;
+  border-radius: 0.5rem;
+}
+
+.add__ingredient-btn {
+  align-self: flex-start;
+  margin-top: 0.5rem;
 }
