@@ -46,7 +46,17 @@
       <%else%>
         <h2>No foods</h2>
       <%end%>
-    </div>
-  </div>
+  <table class="table">
+      <thead>
+        <tr>
+          <th>Food</th>
+          <th>Quantity</th>
+          <th>Value</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render 'ingredient'%>
+      </tbody>
+  </table>
 </section>
-
