@@ -43,7 +43,7 @@
 
 .new__food-container h1 {
   text-align: center;
-  color:rgb(62, 111, 209);
+  color: rgb(62, 111, 209);
   text-transform: capitalize;
 }
 
@@ -51,6 +51,7 @@
   align-self: flex-start;
   margin-top: 0.5rem;
 }
+
 /* recipe */
 
 .recipe-header {
