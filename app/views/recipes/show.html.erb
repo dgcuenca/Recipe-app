@@ -1,52 +1,22 @@
 <section class = "recipe-item">
-  <div class="recipe-container2">
+  <div class="recipe__container">
     <h2> <%= @recipe.name %></h2>
     <div class = "recipe-detail-header">
-        <p>Preparation Time: <strong><%= @recipe.preparation_time %></strong></p>
-        <%= form_with(model: @recipe, url: recipe_path(id: @recipe.id), method: :patch, id: 'recipe-form') do |form| %>
-            <%= form.check_box :public, {class: 'toggle-switch', id: 'public-toggle', onchange: 'submit()'}%>
-            <%= form.label :public, class: 'toggle-switch-label', for: 'public-toggle' %>
-            <%= form.submit 'Update Recipe', id: 'submit-button', style: 'display: none;' %>
-        <% end %>
+      <p>Preparation Time: <strong><%= @recipe.preparation_time %></strong></p>
+      <%= form_with(model: @recipe, url: recipe_path(id: @recipe.id), method: :patch, id: 'recipe-form') do |form| %>
+        <%= form.check_box :public, {class: 'toggle-switch', id: 'public-toggle', onchange: 'submit()'}%>
+        <%= form.label :public, class: 'toggle-switch-label', for: 'public-toggle' %>
+        <%= form.submit 'Update Recipe', id: 'submit-button', style: 'display: none;' %>
+      <% end %>
     </div>
     <p>Cooking Time: <strong><%= @recipe.cooking_time %></strong></p>
-    <p>Description: <strong><%= @recipe.description %></strong></p>
-    <div class = "recipe-detail-buttons">
-      <button type="button" ><%= link_to "Generate shopping List", general_shopping_list_index_path%></button>
-      <button type="button" ><%= link_to "Add ingredient", new_recipe_recipe_food_path(@recipe)%></button>
+    <p class="recipe__description">Description: <strong><%= @recipe.description %></strong></p>
+    <div class='recipe_buttons'>
+      <%# Authorization %>
+      <%=link_to "Generate Shopping List", general_shopping_list_index_path, class: "button" %>
+      <%=link_to "Add ingredient", new_recipe_recipe_food_path(@recipe), class: "button" %>
     </div>
-    <div>
-      <% if @foods.count > 0%>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Food</th>
-            <th>Quantity</th>
-            <th>Value</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @foods.each do |food| %>
-          <tr>
-            <td><%= food.name %></td>
-            <td><%= food.quantity %> <%= food.measurement_unit %></td>
-            <td><%= food.price %></td>
-            <td>
-              <%= link_to "Modify", food_path(food), class: "delete",
-                        data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}
-              %>
-              <%= link_to "Remove", food_path(food), class: "delete",
-                        data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}
-              %>
-            </td>
-          </tr>
-          <% end %>
-        </tbody>
-      <%else%>
-        <h2>No foods</h2>
-      <%end%>
-  <table class="table">
+    <table class="table">
       <thead>
         <tr>
           <th>Food</th>
@@ -58,5 +28,6 @@
       <tbody>
         <%= render 'ingredient'%>
       </tbody>
-  </table>
+    </table>
+  </div>
 </section>
