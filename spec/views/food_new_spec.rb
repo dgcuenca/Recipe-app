@@ -15,5 +15,4 @@ RSpec.describe Food, type: :system do
     visit foods_path
     expect(page).to have_content('Pizza')
   end
-
 end
