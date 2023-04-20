@@ -2,13 +2,14 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #f9f9f7;
+  background: rgb(62, 111, 209);
+  color: #fff;
   border-bottom: 1px solid #dddcdc;
   height: 50px;
   width: 100%;
   position: absolute;
   top: 0;
-  padding: 0 6rem;
+  padding: 0 8rem;
 }
 
 .menu-items {
@@ -21,15 +22,15 @@ nav {
 /* nav bar links */
 
 nav a {
-  color: #151b3a;
+  color: #fff;
   padding: 0.9rem;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 
 nav a:hover {
-  color: #581f05;
+  color: #d1cac7;
   text-decoration: none;
 }
 
@@ -38,9 +39,9 @@ nav a:hover {
   padding: 0.5em 1em;
   text-decoration: none;
   border-radius: 4px;
-  background: #e9e7e7;
+  background: #c76666;
   border: 1px solid rgb(148, 58, 58);
   font-size: 1rem;
-  color: #0a0a0e;
+  color: #fff;
   cursor: pointer;
 }
