@@ -7,6 +7,7 @@ class RecipeFoodsController < ApplicationController
   def create
     @recipe_food = RecipeFood.new(recipe_food_params)
     @recipe_food.recipe_id = Recipe.find(params[:recipe_id]).id
+    @recipe_food.user_id = current_user.id
     if @recipe_food.save
       redirect_to recipe_path(params[:recipe_id]), notice: 'Food was successfully created.'
     else
