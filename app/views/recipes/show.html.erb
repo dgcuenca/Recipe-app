@@ -1,16 +1,17 @@
 <section class = "recipe-item">
   <div class="recipe__container">
     <h2> <%= @recipe.name %></h2>
-    <div class = "recipe-detail-header">
-      <p>Preparation Time: <strong><%= @recipe.preparation_time %></strong></p>
-      <%= form_with(model: @recipe, url: recipe_path(id: @recipe.id), method: :patch, id: 'recipe-form') do |form| %>
-        <%= form.check_box :public, {class: 'toggle-switch', id: 'public-toggle', onchange: 'submit()'}%>
-        <%= form.label :public, class: 'toggle-switch-label', for: 'public-toggle' %>
-        <%= form.submit 'Update Recipe', id: 'submit-button', style: 'display: none;' %>
-      <% end %>
+    <div class='recipe_information'>
+      <p>Preparation time: <%=@recipe.preparation_time%> minutes</p>
+      <div class='public_logo'>
+        <p><%=@recipe.public ? 'Public' : 'Not Public'%></p>
+        <div class="<%=@recipe.public ? 'public' : 'not_public'%>">
+          <span class="<%=@recipe.public ? 'public_switch' : 'not_public_switch'%>"></span>
+        </div>
+      </div>
+      <p>Cooking time: <%=@recipe.cooking_time%> minutes</p>
     </div>
-    <p>Cooking Time: <strong><%= @recipe.cooking_time %></strong></p>
-    <p class="recipe__description">Description: <strong><%= @recipe.description %></strong></p>
+    <p><%=@recipe.description%></p>
     <div class='recipe_buttons'>
       <% if can? :update, @recipe %>
         <%=link_to "Generate Shopping List", general_shopping_list_index_path, class: "button" %>
