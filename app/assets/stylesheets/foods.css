@@ -1,0 +1,143 @@
+.foods-wrapper {
+  margin: 4rem auto;
+  max-width: 50rem;
+  gap: 2rem;
+  background: #fff;
+  padding: 1rem;
+}
+
+.foods-wrapper h1 {
+  align-self: center;
+}
+
+.food-items-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.foods-wrapper div {
+  gap: 2rem;
+}
+
+.foods-wrapper div a {
+  align-self: center;
+}
+
+.food-item div {
+  margin: 3rem auto;
+  gap: 2rem;
+  padding: 1rem;
+  border: 1px solid #000;
+  border-radius: 0.5rem;
+}
+
+.new__food-container {
+  background: #fff;
+  margin-top: 2rem;
+  width: 40%;
+  padding: 1rem;
+  border: 1px solid rgb(230, 224, 224);
+  border-radius: 0.5rem;
+}
+
+.new__food-container h1 {
+  text-align: center;
+  color: rgb(62, 111, 209);
+  text-transform: capitalize;
+}
+
+.create__food-btn {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+/* recipe */
+
+.recipe-header {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  text-align: center;
+  padding: 8px;
+}
+
+.recipe-description {
+  flex-grow: 1;
+  background-color: #6699ffab;
+  text-align: center;
+  padding: 5px;
+}
+
+.recipe-headere {
+  display: flex;
+  flex-direction: row;
+}
+
+.toggle-switch {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  top: 10px;
+}
+
+.toggle-switch-label {
+  display: inline-block;
+  height: 26px;
+  width: 50px;
+  border-radius: 13px;
+  background-color: #bbb;
+  position: relative;
+  cursor: pointer;
+  padding-left: 50px;
+  margin-right: 30px;
+}
+
+.toggle-switch-label::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: 3px;
+  left: 3px;
+  background-color: white;
+  transition: all 0.3s;
+}
+
+.toggle-switch:checked + .toggle-switch-label {
+  background-color: #4caf50;
+}
+
+.toggle-switch:checked + .toggle-switch-label::before {
+  transform: translateX(26px);
+}
+
+.recipe-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.new__ingredients {
+  width: 40%;
+  background: #fff;
+  padding: 2rem;
+  border: 0.2px solid lightgray;
+  border-radius: 0.5rem;
+}
+
+.add__ingredient-btn {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+.recipe-detail-header {
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+}

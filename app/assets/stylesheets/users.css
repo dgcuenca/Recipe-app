@@ -1,0 +1,78 @@
+.sign_in {
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.signin__wrapper {
+  border: 0.3px solid rgb(165, 159, 170);
+  border-radius: 0.5rem;
+  background: #fff;
+  width: 40%;
+  padding: 2rem;
+}
+
+.sign_in h2 {
+  color: rgb(3, 97, 185);
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.sign_in form {
+  border: 1px solid rgb(221, 219, 223);
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+.sign_in .field {
+  width: 100%;
+}
+
+.signup__alert {
+  outline: none;
+  display: none;
+}
+
+.sign_in .field > * {
+  margin-top: 0.5rem;
+  width: 100%;
+  height: 2.5rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  outline: none;
+  border: 0.1px solid lightgray;
+}
+
+.label {
+  border: none;
+}
+
+.signup__btn {
+  align-self: flex-start;
+}
+
+.login__link {
+  text-align: center;
+  margin-top: 0.5rem;
+  background: rgba(9, 152, 196, 0.178);
+  font-size: 1.2rem;
+  padding: 0.5rem 2rem;
+  border-radius: 0.25rem;
+}
+
+.remember__me,
+.action__btn {
+  align-self: flex-start;
+}
+
+.other__links {
+  margin-top: 0.25rem;
+  background: rgba(9, 152, 196, 0.082);
+  padding: 0.5rem 0.25rem;
+  border-radius: 0.25rem;
+}

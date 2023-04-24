@@ -1,0 +1,32 @@
+<section class='sign_in flex-items'>
+  <div class="signin__wrapper">
+    <h2>Sign up</h2>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: false }, html: { class: "flex-items" }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <div class="field">
+        <%= f.text_field :name, autofocus: true, placeholder: "Name"%>
+      </div>
+      <div class="field">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+      </div>
+      <div class="field">
+        <div class="signup__alert">
+          <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+        </div>
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password" %>
+      </div>
+      <div class="field">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password" %>
+      </div>
+      <br/>
+      <div class="actions signup__btn">
+        <%= f.submit "Sign up", class: "button" %>
+      </div>
+    <% end %>
+    <div class="login__link">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</section>

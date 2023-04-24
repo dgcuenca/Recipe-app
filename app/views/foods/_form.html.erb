@@ -1,0 +1,18 @@
+<%= form_with(model: food, html: { class: "flex-items" }) do |form| %>
+  <%= render "shared/form_error_message", resource: food %>
+  <div class="field">
+    <%= form.text_field :name, required: true, class: "form-input", placeholder: "Food name" %>
+  </div>
+  <div class="field">
+    <%= form.text_field :measurement_unit, required: true, class: "form-input", placeholder: "Measurment Unit(g, kg, l, ml)" %>
+  </div>
+  <div class="field">
+    <%= form.text_field :price, required: true, class: "form-input", placeholder: "Unit price" %>
+  </div>
+  <div class="field">
+    <%= form.number_field :quantity, required: true, class: "form-input", placeholder: "Quantity" %>
+  </div>
+  <div class="create__food-btn">
+    <%= form.submit "Create Food", class: "button"%>
+  </div>
+<% end %>

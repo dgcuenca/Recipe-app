@@ -1,0 +1,13 @@
+<section class='recipes_index flex-items'>
+  <div class="recipe__description-container">
+    <h1>Recipes</h1>
+    <% if @recipes.count > 0%>
+      <%= render 'recipe'%>
+    <% else %>
+      <h2>There are no recipes yet</h2>
+    <% end %>
+    <div class="new__recipe-btn">
+      <%=link_to "New Recipe", new_recipe_path, class: "button" %>
+    </div>
+  </div>
+</section>
